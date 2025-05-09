@@ -1,20 +1,230 @@
+* {
+    margin: 0;
+}
+
 body {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+#container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 600px;
     background-color: white;
+    row-gap: 16px;
 }
 
-#neutralinoapp {
-    text-align: center;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 16px;
+    margin-right: 16px;
+    column-gap: 8px;
 }
 
-#neutralinoapp h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-}
-
-#neutralinoapp > div {
+.title {
     font-size: 16px;
-    font-weight: normal;
+    font-weight: bold;
+    height: 16px;
+}
+
+.sub-title {
+    font-size: 12px;
+    height: 12px;
+}
+
+#switch-container {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+
+/* Toggle Button Container */
+.toggle-button {
+    display: flex;
+    border: 1px solid #01ABE8;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 568px;
+    /* 可根据需要调整宽度 */
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+}
+
+/* Left Side (Blue Background) */
+.toggle-left {
+    background-color: white;
+    color: #01ABE8;
+    flex: 1;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Right Side (White Background) */
+.toggle-right {
+    background-color: white;
+    color: #01ABE8;
+    flex: 1;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* 选中状态样式 */
+.toggle-left.active,
+.toggle-right.active {
+    background-color: #01ABE8;
+    color: white;
+}
+
+hr {
+    width: 568px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border: 1px solid #E8E8E8;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 16px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.main-button {
+    width: 400px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;;
+    background-color: #01ABE8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.halt {
+    width: 48px;
+    height: 48px;
+    background-image: url("icons/3.svg");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.restart {
+    width: 48px;
+    height: 48px;
+    background-image: url("icons/4.svg");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.status {
+    width: 48px;
+    height: 48px;
+}
+
+.run {
+    background-image: url("icons/5.svg");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.stop {
+    background-image: url("icons/7.svg");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.shadow {
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16) inset;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16) inset;
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16) inset;
+}
+
+.quote {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 568px;
+}
+
+.quote-url{
+    flex: 1;
+    height: 32px;
+    background-color: #F2F2F2;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.quote-title{
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-show {
+    display: flex;
+}
+
+#footer {
+    height: 8px;
+    bottom: 0px;
+    background-color: #01ABE8;
+    width: 600px;
+}
+
+#menu-sim {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 16px;
+}
+
+#menu-real {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 16px;
 }

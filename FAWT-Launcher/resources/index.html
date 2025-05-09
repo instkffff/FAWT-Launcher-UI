@@ -1,21 +1,152 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
+
+<head>
+    <meta charset="UTF-8" />
     <title>NeutralinoJs sample app</title>
-    <link rel="stylesheet" href="/styles.css">
-  </head>
-  <body>
-    <div id="neutralinoapp">
-      <h1>NeutralinoJs</h1>
-      <div id="info"></div>
-      <br/>
-      <img src="/icons/logo.gif" alt="Neutralinojs" />
-      <div>
-        <a href="#" onclick="openDocs();">Docs</a> &middot;  
-        <a href="#" onclick="openTutorial();">Video tutorial</a>
-      </div>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=600, initial-scale=1.0" />
+</head>
+
+<body>
+    <div id="container">
+        <div id="head">
+            <img src="icons/2.svg" alt="head" />
+        </div>
+        <div class="title-container">
+            <div class="title">启动模式选择</div>
+            <div class="sub-title">切换模式所有启动程序将关闭</div>
+        </div>
+        <div id="switch-container">
+            <div class="toggle-button">
+                <div class="toggle-left active" onclick="switchMode(1)">数据模拟</div>
+                <div class="toggle-right" onclick="switchMode(2)">联机运行</div>
+            </div>
+        </div>
+        <hr />
+        <div id="menu-sim" class="display-show">
+            <div class="menu-container">
+                <div class="title-container">
+                    <div class="title">主程序</div>
+                </div>
+                <div class="menu">
+                    <button class="main-button" title="main-program">主程序</button>
+                    <button class="halt" title="halt"></button>
+                    <button class="restart" title="restart"></button>
+                    <div class="status stop"></div>
+                </div>
+                <div class="quote">
+                    <div class="quote-title">访问地址</div>
+                    <div class="quote-url">http://127.0.0.1:8080</div>
+                </div>
+            </div>
+            <hr />
+            <div class="menu-container">
+                <div class="title-container">
+                    <div class="title">风扇阵列模拟器</div>
+                </div>
+                <div class="menu">
+                    <button class="main-button" title="FAWT-sim">风扇阵列模拟器</button>
+                    <button class="halt" title="halt"></button>
+                    <button class="restart" title="restart"></button>
+                    <div class="status stop"></div>
+                </div>
+            </div>
+            <hr />
+            <div class="menu-container">
+                <div class="title-container">
+                    <div class="title">风扇阵列模拟通讯</div>
+                    <div class="sub-title">命令下发请参考使用文档</div>
+                </div>
+                <div class="menu">
+                    <button class="main-button" title="FAWT-comm-sim">
+                        风扇阵列模拟通讯
+                    </button>
+                    <button class="halt" title="halt"></button>
+                    <button class="restart" title="restart"></button>
+                    <div class="status stop"></div>
+                </div>
+                <div class="quote">
+                    <div class="quote-title">数据调试</div>
+                    <div class="quote-url">http://127.0.0.1:8080</div>
+                </div>
+                <div class="quote">
+                    <div class="quote-title">命令下发</div>
+                    <div class="quote-url">http://127.0.0.1:8080</div>
+                </div>
+            </div>
+            <hr />
+            <div class="menu-container">
+                <div class="title-container">
+                    <div class="title">模拟动捕相机</div>
+                </div>
+                <div class="menu">
+                    <button class="main-button" title="cam-sim">模拟动捕相机</button>
+                    <button class="halt" title="halt"></button>
+                    <button class="restart" title="restart"></button>
+                    <div class="status stop"></div>
+                </div>
+            </div>
+        </div>
+        <div id="menu-real" class="display-none">
+            <div class="menu-container">
+                <div class="title-container">
+                    <div class="title">主程序</div>
+                </div>
+                <div class="menu">
+                    <button class="main-button" title="main-program">主程序</button>
+                    <button class="halt" title="halt"></button>
+                    <button class="restart" title="restart"></button>
+                    <div class="status stop"></div>
+                </div>
+                <div class="quote">
+                    <div class="quote-title">访问地址</div>
+                    <div class="quote-url">http://127.0.0.1:8080</div>
+                </div>
+            </div>
+            <hr />
+            <div class="menu-container">
+                <div class="title-container">
+                    <div class="title">风扇阵列通讯</div>
+                    <div class="sub-title">请先行启动风扇阵列电源，再启动此程序。命令下发请参考使用文档。</div>
+                </div>
+                <div class="menu">
+                    <button class="main-button" title="FAWT-comm">
+                        风扇阵列通讯
+                    </button>
+                    <button class="halt" title="halt"></button>
+                    <button class="restart" title="restart"></button>
+                    <div class="status stop"></div>
+                </div>
+                <div class="quote">
+                    <div class="quote-title">数据调试</div>
+                    <div class="quote-url">http://127.0.0.1:8080</div>
+                </div>
+                <div class="quote">
+                    <div class="quote-title">命令下发</div>
+                    <div class="quote-url">http://127.0.0.1:8080</div>
+                </div>
+            </div>
+            <hr />
+            <div class="menu-container">
+                <div class="title-container">
+                    <div class="title">动捕相机数据源</div>
+                    <div class="sub-title">请先启动动捕相机，再启动此程序。</div>
+                </div>
+                <div class="menu">
+                    <button class="main-button" title="cam">动捕相机数据源</button>
+                    <button class="halt" title="halt"></button>
+                    <button class="restart" title="restart"></button>
+                    <div class="status stop"></div>
+                </div>
+                <div class="quote">
+                    <div class="quote-title">数据调试</div>
+                    <div class="quote-url">http://127.0.0.1:8080</div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div id="footer"></div>
     <!-- Neutralino.js client. This file is gitignored, 
         because `neu update` typically downloads it.
         Avoid copy-pasting it. 
@@ -23,5 +154,7 @@
     <script src="/js/neutralino.js"></script>
     <!-- Your app's source files -->
     <script src="/js/main.js"></script>
-  </body>
+    <script src="js/base.js"></script>
+</body>
+
 </html>
