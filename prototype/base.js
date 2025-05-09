@@ -4,6 +4,12 @@ function switchMode(mode) {
     const menusim = document.querySelector('#menu-sim');
     const menureal = document.querySelector('#menu-real');
 
+    // 判断是否已经处于目标模式，如果是则直接返回
+    if ((mode === 1 && leftBtn.classList.contains('active')) ||
+        (mode === 2 && rightBtn.classList.contains('active'))) {
+        return;
+    }
+
     // 移除所有按钮的 active 类
     leftBtn.classList.remove('active');
     rightBtn.classList.remove('active');
