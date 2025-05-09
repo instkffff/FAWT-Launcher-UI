@@ -1,0 +1,34 @@
+启动整套系统
+npm run start
+
+启动动捕相机（需先启动相机软件）
+npm run camera
+
+单独启动风扇控制器
+npm run middleware
+
+单独启动前端页面
+npm run serve
+
+单独启动服务端
+npm run server
+
+单独启动模拟像机
+node FAWT-COMM/camera/simulated/wsServer.js
+
+单独启动模拟风扇控制器
+node FAWT-COMM/socketServer/serverFinal.js --test=true
+
+单独启动风扇模拟器
+node FAWT-COMM/socketClient/startClient.js
+
+软件依赖更新
+npm install
+
+软件文档（以后再说）
+
+编辑风型在风速表格里面 有几个示例
+恒定变化 constant_change_example
+恒定风速 constant_example
+恒定移动 wipe_over_constant
+简单湍流 turbulence_example

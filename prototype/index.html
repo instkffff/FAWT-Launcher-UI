@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>NeutralinoJs sample app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="head">
+            <img src="../resource/组 2.svg" alt="head" />
+        </div>
+        <div class="title-container">
+            <div id="title">
+                启动模式选择
+            </div>
+            <div id="sub-title">
+                切换模式所有启动程序将关闭
+            </div>
+        </div>
+        <div id="switch-container">
+            <div class="toggle-button">
+                <div class="toggle-left active" onclick="switchMode(1)">数据模拟</div>
+                <div class="toggle-right" onclick="switchMode(2)">联机运行</div>
+            </div>
+        </div>
+        <hr>
+        <div id="menu-container">
+            <div class="title-container">
+                <div id="title">
+                    主程序
+                </div>
+            </div>
+            <div class="menu">
+                <button>启动</button>
+                <button>启动</button>
+                <button>启动</button>
+                <img src="../resource/组 7.svg" alt="status" />
+            </div>
+        </div>
+    </div>
+    <!-- Neutralino.js client. This file is gitignored, 
+        because `neu update` typically downloads it.
+        Avoid copy-pasting it. 
+        -->
+    <!-- script src="/js/neutralino.js"></script -->
+    <!-- Your app's source files -->
+    <!-- script src="/js/main.js"></script -->
+    <script src="base.js"></script>
+</body>
+
+</html>
