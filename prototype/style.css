@@ -1,14 +1,21 @@
 * {
-  margin: 0;
-  font-family: 微软雅黑;
+    margin: 0;
+    font-family: 微软雅黑;
 }
 
-#container {
+body {
+    height: 840px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    height: 800px;
+}
+#container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 600px;
     background-color: white;
     row-gap: 16px;
@@ -24,12 +31,12 @@
     column-gap: 8px;
 }
 
-#title { 
+.title {
     font-size: 16px;
     font-weight: bold;
 }
 
-#sub-title { 
+.sub-title {
     font-size: 12px;
 }
 
@@ -45,7 +52,8 @@
     border: 1px solid #01ABE8;
     border-radius: 8px;
     overflow: hidden;
-    width: 568px; /* 可根据需要调整宽度 */
+    width: 568px;
+    /* 可根据需要调整宽度 */
     height: 48px;
     line-height: 48px;
     text-align: center;
@@ -83,8 +91,136 @@ hr {
     border: 1px solid #E8E8E8;
 }
 
-#menu-container {
+.menu-container {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 16px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.main-button {
+    width: 400px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;;
+    background-color: #01ABE8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.halt {
+    width: 48px;
+    height: 48px;
+    background-image: url("../resource/组 3.svg");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.restart {
+    width: 48px;
+    height: 48px;
+    background-image: url("../resource/组 4.svg");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.status {
+    width: 48px;
+    height: 48px;
+}
+
+.run {
+    background-image: url("../resource/组 5.svg");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.stop {
+    background-image: url("../resource/组 7.svg");
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.shadow {
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16) inset;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16) inset;
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16) inset;
+}
+
+.quote {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 568px;
+}
+
+.quote-url{
+    flex: 1;
+    height: 32px;
+    background-color: #F2F2F2;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.quote-title{
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-show {
+    display: flex;
+}
+
+#footer {
+    height: 16px;
+    bottom: 0px;
+    background-color: #01ABE8;
+    width: 600px;
+}
+
+#menu-sim {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 16px;
+}
+
+#menu-real {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
