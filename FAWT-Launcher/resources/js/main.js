@@ -75,7 +75,9 @@ const middlewaretestStatus = document.querySelector('#middlewaretest');
 // define commands
 
 // 提取公共路径
-const path = "C:\\Users\\NightCandle\\Desktop\\drone-system";
+// const path = "C:\\Users\\NightCandle\\Desktop\\drone-system";
+
+const path = '.'
 
 // 定义命令列表
 const commandsList = {
