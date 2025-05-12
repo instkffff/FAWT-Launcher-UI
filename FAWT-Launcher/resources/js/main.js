@@ -66,6 +66,7 @@ async function switchMode(mode) {
 
 
 const mainStatus = document.querySelector('#main');
+const mainStatus1 = document.querySelector('#main1');
 const middlewareStatus = document.querySelector('#middleware');
 const cameraStatus = document.querySelector('#camera');
 const simcameraStatus = document.querySelector('#simcamera');
@@ -109,7 +110,7 @@ let idList = {
 }
 
 let statusList = {
-    main: mainStatus,
+    main: [mainStatus, mainStatus1],
     middleware: middlewareStatus,
     camera: cameraStatus,
     simcamera: simcameraStatus,
@@ -215,13 +216,25 @@ async function restart(commandName) {
 }
 
 function statusStart(commandName) {
-    statusList[commandName].classList.remove('stop');
-    statusList[commandName].classList.add('run');
+    const elements = Array.isArray(statusList[commandName])
+        ? statusList[commandName]
+        : [statusList[commandName]];
+
+    elements.forEach(element => {
+        element.classList.remove('stop');
+        element.classList.add('run');
+    });
 }
 
 function statusHalt(commandName) {
-    statusList[commandName].classList.remove('run');
-    statusList[commandName].classList.add('stop');
+    const elements = Array.isArray(statusList[commandName])
+        ? statusList[commandName]
+        : [statusList[commandName]];
+
+    elements.forEach(element => {
+        element.classList.remove('run');
+        element.classList.add('stop');
+    });
 }
 
 async function setWindowSize() {
@@ -243,7 +256,16 @@ Neutralino.events.on("ready", () => {
     });
 });
 
-Neutralino.events.on("windowClose", () => {
+Neutralino.events.on("windowClose", async () => {
+    // 获取所有正在运行的命令名
+    const runningCommands = Object.keys(pidList).filter(cmd => pidList[cmd] !== null);
+
+    // 依次停止所有正在运行的命令
+    for (const cmd of runningCommands) {
+        await stopCommand(cmd);
+    }
+
+    // 确保主进程退出
     Neutralino.app.exit();
 });
 
