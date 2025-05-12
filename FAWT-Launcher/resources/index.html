@@ -30,10 +30,10 @@
                     <div class="title">主程序</div>
                 </div>
                 <div class="menu">
-                    <button class="main-button" title="main-program">主程序</button>
-                    <button class="halt" title="halt"></button>
-                    <button class="restart" title="restart"></button>
-                    <div class="status stop"></div>
+                    <button class="main-button" title="main-program" onclick="start('main')">主程序</button>
+                    <button class="halt" title="halt" onclick="halt('main')"></button>
+                    <button class="restart" title="restart" onclick="restart('main')"></button>
+                    <div class="status stop" id="main"></div>
                 </div>
                 <div class="quote">
                     <div class="quote-title">访问地址</div>
@@ -46,10 +46,10 @@
                     <div class="title">风扇阵列模拟器</div>
                 </div>
                 <div class="menu">
-                    <button class="main-button" title="FAWT-sim">风扇阵列模拟器</button>
-                    <button class="halt" title="halt"></button>
-                    <button class="restart" title="restart"></button>
-                    <div class="status stop"></div>
+                    <button class="main-button" title="FAWT-sim" onclick="start('testclient')">风扇阵列模拟器</button>
+                    <button class="halt" title="halt" onclick="halt('testclient')"></button>
+                    <button class="restart" title="restart" onclick="restart('testclient')"></button>
+                    <div class="status stop" id="testclient"></div>
                 </div>
             </div>
             <hr />
@@ -59,12 +59,12 @@
                     <div class="sub-title">命令下发请参考使用文档</div>
                 </div>
                 <div class="menu">
-                    <button class="main-button" title="FAWT-comm-sim">
+                    <button class="main-button" title="FAWT-comm-sim" onclick="start('middlewaretest')">
                         风扇阵列模拟通讯
                     </button>
-                    <button class="halt" title="halt"></button>
-                    <button class="restart" title="restart"></button>
-                    <div class="status stop"></div>
+                    <button class="halt" title="halt" onclick="halt('middlewaretest')"></button>
+                    <button class="restart" title="restart" onclick="restart('middlewaretest')"></button>
+                    <div class="status stop" id="middlewaretest"></div>
                 </div>
                 <div class="quote">
                     <div class="quote-title">数据调试</div>
@@ -81,10 +81,10 @@
                     <div class="title">模拟动捕相机</div>
                 </div>
                 <div class="menu">
-                    <button class="main-button" title="cam-sim">模拟动捕相机</button>
-                    <button class="halt" title="halt"></button>
-                    <button class="restart" title="restart"></button>
-                    <div class="status stop"></div>
+                    <button class="main-button" title="cam-sim" onclick="start('simcamera')">模拟动捕相机</button>
+                    <button class="halt" title="halt" onclick="halt('simcamera')"></button>
+                    <button class="restart" title="restart" onclick="restart('simcamera')"></button>
+                    <div class="status stop" id="simcamera"></div>
                 </div>
             </div>
         </div>
@@ -94,10 +94,10 @@
                     <div class="title">主程序</div>
                 </div>
                 <div class="menu">
-                    <button class="main-button" title="main-program">主程序</button>
-                    <button class="halt" title="halt"></button>
-                    <button class="restart" title="restart"></button>
-                    <div class="status stop"></div>
+                    <button class="main-button" title="main-program" onclick="start('main')">主程序</button>
+                    <button class="halt" title="halt" onclick="halt('main')"></button>
+                    <button class="restart" title="restart" onclick="restart('main')"></button>
+                    <div class="status stop" id="main"></div>
                 </div>
                 <div class="quote">
                     <div class="quote-title">访问地址</div>
@@ -111,12 +111,12 @@
                     <div class="sub-title">请先行启动风扇阵列电源，再启动此程序。命令下发请参考使用文档。</div>
                 </div>
                 <div class="menu">
-                    <button class="main-button" title="FAWT-comm">
+                    <button class="main-button" title="FAWT-comm" onclick="start('middleware')">
                         风扇阵列通讯
                     </button>
-                    <button class="halt" title="halt"></button>
-                    <button class="restart" title="restart"></button>
-                    <div class="status stop"></div>
+                    <button class="halt" title="halt" onclick="halt('middleware')"></button>
+                    <button class="restart" title="restart" onclick="restart('middleware')"></button>
+                    <div class="status stop" id="middleware"></div>
                 </div>
                 <div class="quote">
                     <div class="quote-title">数据调试</div>
@@ -134,10 +134,10 @@
                     <div class="sub-title">请先启动动捕相机，再启动此程序。</div>
                 </div>
                 <div class="menu">
-                    <button class="main-button" title="cam">动捕相机数据源</button>
-                    <button class="halt" title="halt"></button>
-                    <button class="restart" title="restart"></button>
-                    <div class="status stop"></div>
+                    <button class="main-button" title="cam" onclick="start('camera')">动捕相机数据源</button>
+                    <button class="halt" title="halt" onclick="halt('camera')"></button>
+                    <button class="restart" title="restart" onclick="restart('camera')"></button>
+                    <div class="status stop" id="camera"></div>
                 </div>
                 <div class="quote">
                     <div class="quote-title">数据调试</div>
@@ -154,7 +154,6 @@
     <script src="/js/neutralino.js"></script>
     <!-- Your app's source files -->
     <script src="/js/main.js"></script>
-    <script src="/js/base.js"></script>
 </body>
 
 </html>
